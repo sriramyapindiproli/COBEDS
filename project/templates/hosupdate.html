@@ -1,0 +1,78 @@
+{% extends 'baselogin.html' %}
+{% block title %} Update Beds{% endblock title %}
+{% block body %}<div class="section-header"><h2>Update Beds</h2> <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p></div> {% endblock body %}
+{% block form %}
+<div class="col-md-4">
+<form action="/hedit" method="post">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control mt-2"
+        name="hcode"
+        value={{posts.hcode}}
+        placeholder="Enter the Hospital Code"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control mt-2"
+        name="hname"
+        value={{posts.hname}}
+        placeholder="Enter Hospital Name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control mt-2"
+        name="normalbed"
+        placeholder="Normal Bed Available?"
+       value={{posts.normalbed}}
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control mt-2"
+        name="hicubeds"
+        value={{posts.hicubed}}
+        placeholder="H.I.C.U Bed Available?"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control mt-2"
+        name="icubeds"
+        value={{posts.icubed}}
+        placeholder="I.C.U Bed Available?"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control mt-2"
+        name="ventbeds"
+        value={{posts.vbed}}
+        placeholder="Ventilators Bed Available?"
+        required
+      />
+    </div>
+
+    <br />
+    <button class="btn btn-info" style="background-color:#FCCF17;color:white;"  type="submit">Update</button>
+  </form>
+</div>
+
+
+          {% endblock form %}

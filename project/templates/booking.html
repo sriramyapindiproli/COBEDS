@@ -1,0 +1,81 @@
+{% extends "baselogin.html" %} {% block title %}Booking {% endblock title %}
+{% block body %}<div class="section-header"><h2>Booking</h2> <p>After successful Booking you'll receive a confirmation mail from us! </p></div> {% endblock body %}
+{% block form %}
+<div class="col-md-4">
+<form action="/slotbooking" method="post">
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control mt-2"
+      name="srfid"
+      value="{{current_user.srfid}}"
+      readonly
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <select id="bedtype" name="bedtype" class="form-control" required>
+      <option selected>Choose Bed Type</option>
+      <option value="NormalBed">Normal Bed</option>
+      <option value="HICUBed">HICU Bed</option>
+      <option value="ICUBed">ICU Bed</option>
+      <option value="VENTILATORBed">VENTILATOR Bed</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control mt-2"
+      name="hcode"
+      placeholder="Enter Hospital Code"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <input
+      type="number"
+      class="form-control mt-2"
+      name="spo2"
+      placeholder="Oxygen Level "
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control mt-2"
+      name="pname"
+      placeholder="Patient Name"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control mt-2"
+      name="pphone"
+      placeholder="Patient Phone Number"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control mt-2"
+      name="paddress"
+      placeholder="Patient Address"
+      required
+    />
+  </div>
+
+  <br />
+  <button class="btn btn-info" style="background-color:#008966;color:white;" type="submit">Book</button>
+</form>
+</div>
+
+       {% endblock form %}

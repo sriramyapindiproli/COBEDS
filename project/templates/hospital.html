@@ -1,0 +1,57 @@
+{% extends 'navbar.html' %}
+{% block title %}Hospitals{% endblock title %}
+{% block body %}
+<form action="'/hospitals" method="post">
+  <section class="intro"  data-aos="fade-up">
+    <div class="bg-image h-100" style="background-color: #f5f7fa;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container"  data-aos="fade-up">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card" >
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+                    <table class="table table-striped mb-0"  >
+                      <thead style="background-color: #008374;color: rgba(255, 255, 255, 0.6);">
+                        <tr>
+                          
+                          <th scope="col">Hcode</th>
+                          <th scope="col">Hospital Name</th>
+                          <th scope="col">Normal Beds</th>
+                          <th scope="col">HICU Beds</th>
+                          <th scope="col">ICU Beds</th>
+                          <th scope="col">Ventilator Beds</th>
+                        </tr>
+                      </thead>
+                      
+                       
+                          <tbody>
+                            
+                          {% for postsdata in posts %}
+                         
+                           <tr>
+                            
+                              <td>{{postsdata.hcode}}</td>
+                              <td>{{postsdata.hname}}</td>
+                              <td>{{postsdata.normalbed}}</td>
+                              <td>{{postsdata.hicubed}}</td>
+                              <td>{{postsdata.icubed}}</td>
+                              <td>{{postsdata.vbed}}</td>
+                            </tr>
+                           
+                          {% endfor %}
+                           
+                          </tbody>
+                        </table>
+                      </form>
+                       
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock body %}

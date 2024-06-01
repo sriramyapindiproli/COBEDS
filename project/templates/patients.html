@@ -1,0 +1,61 @@
+{% extends 'navbar.html' %}
+{% block title %}Hospitals{% endblock title %}
+{% block body %}
+<form action="'/patients" method="post">
+  <section class="intro"  data-aos="fade-up">
+    <div class="bg-image h-100" style="background-color: #f5f7fa;">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container"  data-aos="fade-up">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card" >
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+                    <table class="table table-striped mb-0"  >
+                      <thead style="background-color: #008374;color: rgba(255, 255, 255, 0.6);">
+                        <tr>
+                            <th scope="col">Hcode</th> 
+                          <th scope="col">srfid</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Bed Type</th>
+                          <th scope="col">SPO2</th>
+
+                          <th scope="col">Phone Number</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">OTP</th>
+                          
+                        </tr>
+                      </thead>
+                      
+                       
+                          <tbody>
+                            
+                          {% for post in postsdata %}
+                         
+                           <tr>
+                            <td>{{post.hcode}}</td>
+                              <td>{{post.srfid}}</td>
+                              <td>{{post.pname}}</td>
+                              <td>{{post.bedtype}}</td>
+                              <td>{{post.spo2}}</td>
+                              <td>{{post.pphone}}</td>
+                              <td>{{post.paddress}}</td>
+                              <td>{{post.paddress}}</td>
+                            </tr>
+                           
+                          {% endfor %}
+                           
+                          </tbody>
+                        </table>
+                      </form>
+                       
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock body %}
